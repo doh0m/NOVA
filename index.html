@@ -1,0 +1,658 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#070b13">
+
+    <title>NOVA | Space Exploration</title>
+
+    <!-- FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="topbar">
+
+        <a class="brand" href="#">
+            <span class="brand-mark">N</span>
+            <span>
+                NOVA
+                <span class="brand-light"> / EXPLORATION</span>
+            </span>
+        </a>
+
+        <div class="top-actions">
+
+            <span class="status-dot"></span>
+
+            <span class="status-label" data-i18n="systemOnline">
+                SYSTEM ONLINE
+            </span>
+
+            <select id="languageSelect" aria-label="Language">
+                <option value="es">ESPAÑOL</option>
+                <option value="en">ENGLISH</option>
+            </select>
+
+            <button
+                class="icon-button"
+                id="soundToggle"
+                title="Ambient audio"
+                aria-label="Ambient audio">
+                ♫
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <!-- ================= HOME ================= -->
+
+        <section id="homeScreen" class="screen active">
+
+            <div class="hero">
+
+                <div class="hero-image"></div>
+                <div class="hero-grid"></div>
+
+                <div class="hero-content">
+
+                    <p class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        <span data-i18n="heroEyebrow">
+                            NASA-INSPIRED EXPLORATION PROJECT
+                        </span>
+                    </p>
+
+                    <h1>
+                        BEYOND
+                        <br>
+                        <span>THE KNOWN.</span>
+                    </h1>
+
+                    <p class="hero-copy" data-i18n="heroCopy">
+                        Explora misiones históricas, descubre tecnología
+                        espacial y recorre mundos que cambiaron nuestra
+                        forma de entender el universo.
+                    </p>
+
+                    <button class="primary-button" id="exploreButton">
+                        <span data-i18n="exploreMissions">
+                            EXPLORAR MISIONES
+                        </span>
+                        <span>↗</span>
+                    </button>
+
+                </div>
+
+                <div class="hero-coordinate">
+                    LUNAR SURFACE / 00° 41′ N
+                </div>
+
+                <div class="hero-scroll">
+                    <span></span>
+                    <span data-i18n="scrollExplore">
+                        SCROLL TO EXPLORE
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- MISSION SELECTION -->
+
+            <section class="missions-section" id="missionsSection">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            <span class="eyebrow-line"></span>
+                            <span data-i18n="selectMission">
+                                SELECT YOUR DESTINATION
+                            </span>
+                        </p>
+
+                        <h2 data-i18n="missionsTitle">
+                            Misiones de exploración
+                        </h2>
+
+                    </div>
+
+                    <p class="section-note" data-i18n="missionsNote">
+                        Cuatro hitos tecnológicos.
+                        Cuatro entornos para explorar.
+                    </p>
+
+                </div>
+
+
+                <div class="mission-grid" id="missionGrid">
+
+                    <!-- APOLLO -->
+
+                    <article class="mission-card" data-mission="apollo">
+
+                        <div class="mission-art art-apollo">
+
+                            <span class="art-orbit"></span>
+                            <span class="art-object lander-art">◇</span>
+                            <span class="art-caption">MOON / 1969</span>
+
+                        </div>
+
+                        <div class="mission-info">
+
+                            <div class="mission-meta">
+                                <span>001 / THE MOON</span>
+                                <span class="mission-tag">HISTORIC</span>
+                            </div>
+
+                            <h3>APOLLO LUNAR MODULE</h3>
+
+                            <p data-i18n="apolloShort">
+                                El módulo Eagle y la llegada humana
+                                a la superficie lunar.
+                            </p>
+
+                            <button class="text-button" data-open="apollo">
+                                <span data-i18n="viewMission">VER MISIÓN</span>
+                                <span>↗</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- LUNAR ROVER -->
+
+                    <article class="mission-card" data-mission="rover">
+
+                        <div class="mission-art art-rover">
+
+                            <span class="art-orbit"></span>
+                            <span class="art-object rover-art">✣</span>
+                            <span class="art-caption">MOON / 1971</span>
+
+                        </div>
+
+                        <div class="mission-info">
+
+                            <div class="mission-meta">
+                                <span>002 / THE MOON</span>
+                                <span class="mission-tag">MOBILITY</span>
+                            </div>
+
+                            <h3>LUNAR ROVING VEHICLE</h3>
+
+                            <p data-i18n="roverShort">
+                                El vehículo eléctrico que amplió
+                                el alcance de los astronautas.
+                            </p>
+
+                            <button class="text-button" data-open="rover">
+                                <span data-i18n="viewMission">VER MISIÓN</span>
+                                <span>↗</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SOJOURNER -->
+
+                    <article class="mission-card" data-mission="sojourner">
+
+                        <div class="mission-art art-mars">
+
+                            <span class="art-orbit"></span>
+                            <span class="art-object mars-art">✧</span>
+                            <span class="art-caption">MARS / 1997</span>
+
+                        </div>
+
+                        <div class="mission-info">
+
+                            <div class="mission-meta">
+                                <span>003 / MARS</span>
+                                <span class="mission-tag">ROBOTICS</span>
+                            </div>
+
+                            <h3>SOJOURNER ROVER</h3>
+
+                            <p data-i18n="sojournerShort">
+                                El primer rover que exploró
+                                la superficie de Marte.
+                            </p>
+
+                            <button class="text-button" data-open="sojourner">
+                                <span data-i18n="viewMission">VER MISIÓN</span>
+                                <span>↗</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- INGENUITY -->
+
+                    <article class="mission-card" data-mission="ingenuity">
+
+                        <div class="mission-art art-ingenuity">
+
+                            <span class="art-orbit"></span>
+                            <span class="art-object heli-art">✥</span>
+                            <span class="art-caption">MARS / 2021</span>
+
+                        </div>
+
+                        <div class="mission-info">
+
+                            <div class="mission-meta">
+                                <span>004 / MARS</span>
+                                <span class="mission-tag">FLIGHT</span>
+                            </div>
+
+                            <h3>INGENUITY HELICOPTER</h3>
+
+                            <p data-i18n="ingenuityShort">
+                                El primer helicóptero que realizó
+                                vuelos en otro planeta.
+                            </p>
+
+                            <button class="text-button" data-open="ingenuity">
+                                <span data-i18n="viewMission">VER MISIÓN</span>
+                                <span>↗</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- ================= BRIEFING ================= -->
+
+        <section id="briefingScreen" class="screen sub-screen">
+
+            <button class="back-button" id="backHome">
+                ← <span data-i18n="back">VOLVER</span>
+            </button>
+
+            <div class="briefing-layout">
+
+                <div class="briefing-visual" id="briefingVisual">
+
+                    <div class="briefing-planet"></div>
+                    <div class="briefing-ring"></div>
+
+                    <span class="briefing-code">
+                        NOVA / MISSION BRIEF
+                    </span>
+
+                </div>
+
+
+                <div class="briefing-copy">
+
+                    <p class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        <span data-i18n="missionBriefing">
+                            MISSION BRIEFING
+                        </span>
+                    </p>
+
+                    <p class="mission-number" id="briefNumber">
+                        001 / THE MOON
+                    </p>
+
+                    <h2 id="briefTitle">
+                        APOLLO LUNAR MODULE
+                    </h2>
+
+                    <p class="brief-subtitle" id="briefSubtitle"></p>
+
+                    <p class="brief-description" id="briefDescription"></p>
+
+                    <div class="brief-facts" id="briefFacts"></div>
+
+                    <button class="primary-button" id="startMission">
+                        <span data-i18n="beginMission">
+                            INICIAR EXPLORACIÓN
+                        </span>
+                        <span>↗</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= 3D EXPLORATION ================= -->
+
+        <section id="gameScreen" class="screen game-screen">
+
+            <div id="three-container"></div>
+
+            <div class="game-vignette"></div>
+
+
+            <!-- TOP HUD -->
+
+            <div class="hud-top">
+
+                <div>
+                    <span class="hud-label" data-i18n="currentMission">
+                        CURRENT MISSION
+                    </span>
+
+                    <strong id="hudMission">
+                        APOLLO LUNAR MODULE
+                    </strong>
+                </div>
+
+
+                <div class="hud-center">
+                    <span class="live-dot"></span>
+                    <span data-i18n="explorationLive">
+                        EXPLORATION LIVE
+                    </span>
+                </div>
+
+
+                <div class="hud-actions">
+
+                    <button id="mapButton" class="hud-button">
+                        ⌖ <span data-i18n="map">MAPA</span>
+                    </button>
+
+                    <button id="pauseButton" class="hud-button">
+                        Ⅱ <span data-i18n="pause">PAUSA</span>
+                    </button>
+
+                    <button id="exitButton" class="hud-button">
+                        × <span data-i18n="exit">SALIR</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- LEFT HUD -->
+
+            <div class="hud-left">
+
+                <div class="hud-stat">
+                    <span data-i18n="coordinates">COORDENADAS</span>
+                    <strong id="coordinates">X 000 / Z 000</strong>
+                </div>
+
+                <div class="hud-stat">
+                    <span data-i18n="discoveries">DESCUBRIMIENTOS</span>
+                    <strong id="discoveryCount">0 / 3</strong>
+                </div>
+
+                <div class="objective-box">
+
+                    <span class="objective-icon">◎</span>
+
+                    <div>
+                        <small data-i18n="objective">OBJETIVO</small>
+                        <strong id="objectiveText"></strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTTOM HUD -->
+
+            <div class="hud-bottom">
+
+                <div class="control-hint">
+
+                    <kbd>W</kbd>
+                    <kbd>A</kbd>
+                    <kbd>S</kbd>
+                    <kbd>D</kbd>
+
+                    <span data-i18n="move">MOVERSE</span>
+
+                    <kbd>E</kbd>
+
+                    <span data-i18n="interact">INTERACTUAR</span>
+
+                    <kbd>M</kbd>
+
+                    <span data-i18n="map">MAPA</span>
+
+                </div>
+
+                <div class="crosshair">+</div>
+
+                <div class="proximity" id="proximity" data-i18n="findSignal">
+                    BUSCA SEÑALES CERCANAS
+                </div>
+
+            </div>
+
+
+            <!-- DISCOVERY WINDOW -->
+
+            <div class="discovery-panel hidden" id="discoveryPanel">
+
+                <button class="panel-close" id="closeDiscovery">
+                    ×
+                </button>
+
+                <p class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    <span data-i18n="discoveryLogged">
+                        DISCOVERY LOGGED
+                    </span>
+                </p>
+
+                <h3 id="discoveryTitle"></h3>
+
+                <p id="discoveryText"></p>
+
+                <div class="panel-footer">
+
+                    <span id="discoveryIndex">DATA ENTRY 01</span>
+
+                    <button class="text-button" id="dismissDiscovery">
+                        <span data-i18n="closeData">
+                            CERRAR INFORMACIÓN
+                        </span>
+                        ×
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAUSE MENU -->
+
+            <div class="overlay-panel hidden" id="pausePanel">
+
+                <div class="overlay-card">
+
+                    <p class="eyebrow">NOVA / PAUSED</p>
+
+                    <h2 data-i18n="missionPaused">
+                        MISIÓN EN PAUSA
+                    </h2>
+
+                    <p data-i18n="pauseCopy">
+                        La exploración está detenida.
+                    </p>
+
+                    <button class="primary-button" id="resumeButton">
+                        <span data-i18n="resume">CONTINUAR</span>
+                        ↗
+                    </button>
+
+                    <button class="secondary-button" id="pauseExitButton" data-i18n="leaveMission">
+                        ABANDONAR MISIÓN
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- MAP -->
+
+            <div class="overlay-panel hidden" id="mapPanel">
+
+                <div class="overlay-card map-card">
+
+                    <button class="panel-close" id="closeMap">×</button>
+
+                    <p class="eyebrow">NOVA / NAVIGATION</p>
+
+                    <h2 data-i18n="mapTitle">
+                        MAPA DE EXPLORACIÓN
+                    </h2>
+
+                    <div class="mini-map">
+
+                        <div class="map-grid"></div>
+
+                        <span class="map-player">▲</span>
+                        <span class="map-point point-a">●</span>
+                        <span class="map-point point-b">●</span>
+                        <span class="map-point point-c">●</span>
+
+                    </div>
+
+                    <p class="map-legend" data-i18n="mapLegend">
+                        ▲ Tu posición · ● Señales detectadas
+                    </p>
+
+                    <button class="primary-button" id="mapResume" data-i18n="resume">
+                        CONTINUAR
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- MISSION COMPLETE -->
+
+            <div class="overlay-panel hidden" id="completePanel">
+
+                <div class="overlay-card">
+
+                    <p class="eyebrow">NOVA / MISSION COMPLETE</p>
+
+                    <h2 data-i18n="missionComplete">
+                        MISIÓN COMPLETADA
+                    </h2>
+
+                    <p data-i18n="completeCopy">
+                        Has registrado todos los descubrimientos de esta exploración.
+                    </p>
+
+                    <button class="primary-button" id="completeHome" data-i18n="returnMissions">
+                        VOLVER A LAS MISIONES ↗
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- START ENVIRONMENT -->
+
+            <div class="start-overlay" id="startOverlay">
+
+                <div class="start-card">
+
+                    <span class="start-symbol">N</span>
+
+                    <p data-i18n="readyExplore">
+                        LISTO PARA EXPLORAR
+                    </p>
+
+                    <h2 id="startMissionName">
+                        APOLLO LUNAR MODULE
+                    </h2>
+
+                    <p data-i18n="clickStart">
+                        Haz clic para activar la cámara y comenzar.
+                    </p>
+
+                    <button class="primary-button" id="enterWorld" data-i18n="enterWorld">
+                        ENTRAR AL ENTORNO ↗
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <span>© NOVA SPACE EXPLORATION</span>
+
+        <span data-i18n="footerNote">
+            UN PROYECTO EDUCATIVO DE EXPLORACIÓN ESPACIAL
+        </span>
+
+        <span>THREE.JS / R128</span>
+
+    </footer>s
+
+</div>
+
+
+<!-- ================= THREE.JS ================= -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<!-- ================= NOVA SCRIPT ================= -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
